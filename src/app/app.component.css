@@ -7,7 +7,9 @@
     width: 500px;
     margin: auto;
 }
-
+.reactive-form div {
+    margin-bottom: 15px;
+}
 .reactive-form input {
     width: 100%;
     padding: 10px;
