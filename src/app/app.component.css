@@ -1,0 +1,38 @@
+.heading {
+    margin-top: 120px;
+    color: blue;
+    text-align: center;
+}
+.reactive-form {
+    width: 500px;
+    margin: auto;
+}
+
+.reactive-form input {
+    width: 100%;
+    padding: 10px;
+}
+.reactive-form .d-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.reactive-form .d-flex input {
+    margin-right: 15px;
+}
+.reactive-form button {
+    margin: 10px;
+    background-color: #deac7b;
+    color: white;
+    padding: 10px 10px;
+}
+.reactive-form button:hover {
+    background-color: #f6914e;
+}
+.form_button{
+    text-align: center;
+}
+.form_button button{
+    width: 120px;
+
+}
