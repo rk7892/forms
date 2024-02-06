@@ -1,45 +1,50 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormArray, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  FormArray,
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,ReactiveFormsModule, CommonModule,],
+  imports: [RouterOutlet, ReactiveFormsModule, CommonModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = 'forms';
-  myForm=new FormGroup({
-    name:new FormControl('',[Validators.required]),
-    email:new FormControl("",[Validators.required]),
-    phone_no:new FormControl('+91'),
-    password:new FormControl(""),
-    Address:new FormArray([
-      new FormControl('Addr1'),
-      new FormControl('Addr2')
-    ])
-  })
 
-  getArray(){
-    return this.myForm.get('Address') as FormArray;
+  myReactiveForm = new FormGroup({
+    name: new FormControl('', [Validators.required]),
+    email: new FormControl('', [Validators.required]),
+    password: new FormControl('', [Validators.required]),
+    dob: new FormControl('', [Validators.required]),
+    Address: new FormArray([
+      new FormControl('Addr1'),
+    ]),
+  });
+
+  getAddressFromArray() {
+    return this.myReactiveForm.get('Address') as FormArray;
   }
 
-  addAddress(){
-    this.getArray().push(new FormControl("Addr"))
+  addControlToAddress() {
+    this.getAddressFromArray().push(new FormControl('Addr'));
   }
   removeAddress(index: number) {
-    this.getArray().removeAt(index);
+    this.getAddressFromArray().removeAt(index);
   }
 
-  handleSubmit(){
-    if(this.myForm.invalid){
-      window.alert("Fill the form wih correect values")
+  handleValitade() {
+    if (this.myReactiveForm.invalid) {
+      window.alert('please fill all mandatory fields');
     }
-    console.log(this.myForm.valid);
-    console.log(this.myForm.value);
+    console.log(this.myReactiveForm.valid);
+    console.log(this.myReactiveForm.value);
   }
-
 }

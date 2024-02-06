@@ -1,25 +1,25 @@
 <h1 class="heading">Reactive Forms</h1>
-<form [formGroup]="myForm" class="reactive-form" (ngSubmit)="handleSubmit()">
+<form [formGroup]="myReactiveForm" class="student-form" (ngSubmit)="handleValitade()">
   <div>
-    <input type="text" formControlName="name" name="name" placeholder="enter name">
+    <input formControlName="name" name="name" placeholder="Enter name" type="text">
   </div>
   <div>
-    <input type="password" name="password" formControlName="password" placeholder="********">
+    <input formControlName="email" name="email" placeholder="Enter email" type="email">
   </div>
   <div>
-    <input type="email" name="email" formControlName="email" placeholder="enter email">
+    <input formControlName="password" name="password" placeholder="*******" type="password">
   </div>
   <div>
-    <input type="number" formControlName="phone_no" name="phonenumber" placeholder="enter mobile number">
+    <input formControlName="dob" name="dob" placeholder="Enter DOB" type="date">
   </div>
   <div formArrayName="Address">
-    <div class="d-flex" *ngFor="let x of getArray().controls; index as i">
+    <div class="d-flex" *ngFor="let x of getAddressFromArray().controls; index as i">
       <input type="Address" [formControlName]="i" name="Address">
-      <button type="button" (click)="addAddress()">Add</button>
-      <button type="button" (click)="removeAddress(i)">Remove</button>
+      <button type="button" (click)="addControlToAddress()">Add</button>
+      <button type="button" (click)="removeAddress(i)">Delete</button>
     </div>
   </div>
-  <div class="form_button">
-    <button>submit</button>
+  <div>
+    <button>Submit</button>
   </div>
 </form>

@@ -1,40 +1,21 @@
-.heading {
-    margin-top: 120px;
-    color: blue;
+.heading{
     text-align: center;
 }
-.reactive-form {
-    width: 500px;
+.student-form{
+margin: auto;
+width: 20%;
+}
+.student-form button,
+.student-form input{
+display: block;
+margin-block: 1rem;
+width: 100%;
+height: 3rem;
+}
+.d-flex {
+display: flex;
+}
+.d-flex button{
+    width: 50px;
     margin: auto;
-}
-.reactive-form div {
-    margin-bottom: 15px;
-}
-.reactive-form input {
-    width: 100%;
-    padding: 10px;
-}
-.reactive-form .d-flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.reactive-form .d-flex input {
-    margin-right: 15px;
-}
-.reactive-form button {
-    margin: 10px;
-    background-color: #deac7b;
-    color: white;
-    padding: 10px 10px;
-}
-.reactive-form button:hover {
-    background-color: #f6914e;
-}
-.form_button{
-    text-align: center;
-}
-.form_button button{
-    width: 120px;
-
 }
